@@ -1,0 +1,80 @@
+<div class="centered-content">
+    <div class="task-manager-container">
+
+
+    <div class="sidebar has-background-white">
+        <h1 class = "title has-text-primary">
+            Team 
+        </h1>
+    
+    <div class="list-menu">
+        <a class = "list-menu" *ngFor="let team of team" [routerLink]="['/team', team._id]" routerLinkActive="is-active"> 
+            <p>{{team.first_name}} {{team.last_name}}</p>
+        </a>
+    </div>
+
+    <button class="button is-primary has-text-white" routerLink="/new-team">+ New Player</button>
+    </div>
+    
+    <div class = "task-list-container has-background-light">
+        <div *ngIf="teamInformation">
+            <div class="top-bar">
+                <h1 class="title has-text-primary">
+                  Information
+                </h1>
+                <div class="dropdown is-hoverable is-right">
+                  <div class="dropdown-trigger">
+                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
+                      <span>Actions</span>
+                        <span class="icon is-small">
+                        <i class="fas fa-angle-down" aria-hidden="true"></i>
+                      </span>
+                    </button>
+                  </div>
+                  <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                    <div class="dropdown-content">
+                      <div class = "dropdown-item"></div>
+                      <a [routerLink]= "['/edit-team/', selectedTeamId]" class="dropdown-item">
+                        Edit
+                      </a>
+                      <a (click)="onDeleteTeamClick()" class="dropdown-item has-text-danger">
+                        Delete Player
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+        <!--Task Element-->
+        <div class="task" *ngFor="let teamInformation of teamInformation">
+            <div class="task-text">
+            <p>Team Name: {{teamInformation.team}}
+                <br>Minutes Playes: {{teamInformation.minutes_playes}}
+                 <br>Goals: {{teamInformation.goals}}
+                 <br>Assists: {{teamInformation.assists}}
+                 <br>Yellow Cards: {{teamInformation.yellow_cards}}
+                 <br>Red Cards: {{teamInformation.red_card}}
+                 <br>Pass: {{teamInformation.pass}}
+                 <br>AerialsWon: {{teamInformation.aerialsWon}}
+                 <br>Man Of The Match: {{teamInformation.man_of_the_match}}
+                 <br>Rating: {{teamInformation.rating}}
+                 <br> Shots Per Game: {{teamInformation.shots_per_game}}</p>
+        
+                </div>
+                <div class="task-buttons">
+                    <button class= "button" [routerLink]="['/team', selectedTeamId, 'edit-teaminformation', teamInformation._id]"> Edit </button>
+                    <button class= "button is-danger" (click)="onDeleteTeamInformationClick(teamInformation._id)"> Delete </button>
+                    
+                </div>
+            </div>
+       <button routerLink="./new-teaminformation" class="circle-add-button button is-primary ">
+            <img src="../../../assets/plus-icon.svg" class="has-test-white">
+       </button>
+    </div>
+    <div *ngIf="!teamInformation">
+        <h3 class = "empty-state-text">Please Select a a player</h3>
+    </div>
+
+    </div>
+    </div>
+</div>

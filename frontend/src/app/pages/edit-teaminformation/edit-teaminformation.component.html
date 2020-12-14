@@ -1,0 +1,105 @@
+
+     <div class="container is-fluid">
+        <div class="notification is-primary">
+     <h1 class="title">
+        Edit a Team Member
+      </h1>
+      <div class="columns">
+            <div class="column">
+                <div class="field">
+                    <label class="label">Team Name</label>
+                    <div class="control">
+                       <input #teamInput class="input has-background-light is-medium" type="text" placeholder="Enter team name...">
+                    </div>
+                </div>
+      
+      <div class="field">
+        <label class="label">Time Playes</label>
+        <div class="control">
+            <input #minuteplayesInput class="input has-background-light is-medium" type="text" placeholder="Enter time played...">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Goals</label>
+        <div class="control">
+            <input #goalsInput class="input has-background-light is-medium" type="text" placeholder="Enter goals...">
+        </div>
+      </div>
+      
+      <div class="field">
+        <label class="label">Assists</label>
+        <div class="control">
+            <input #assistsInput class="input has-background-light is-medium" type="text" placeholder="Enter assists...">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Yellow cards</label>
+        <div class="control">
+            <input #yellowcardsInput class="input has-background-light is-medium" type="text" placeholder="Enter yellow_cards...">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Red Card</label>
+        <div class="control">
+            <input #redcardInput class="input has-background-light is-medium" type="text" placeholder="Enter red_card...">
+        </div>
+      </div>
+
+      </div> <!--closing column-->
+      <div class="column">
+
+
+      <div class="field">
+        <label class="label">Pass</label>
+        <div class="control">
+            <input #passInput class="input has-background-light is-medium" type="text" placeholder="Enter pass...">
+        </div>
+      </div>
+      
+      <div class="field">
+        <label class="label">Aerials Won</label>
+        <div class="control">
+            <input #aerialsWonInput class="input has-background-light is-medium" type="text" placeholder="Enter aerialsWon...">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Man Of The Match</label>
+        <div class="control">
+            <input #manofthematchInput class="input has-background-light is-medium" type="text" placeholder="Enter man_of_the_match...">
+        </div>
+      </div>
+      
+      <div class="field">
+        <label class="label">Rating</label>
+        <div class="control">
+            <input #ratingInput class="input has-background-light is-medium" type="text" placeholder="Enter rating...">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Shots per Game</label>
+        <div class="control">
+            <input #shotspergameInput class="input has-background-light is-medium" type="text" placeholder="Enter shots_per_game...">
+        </div>
+      </div>
+
+      <br>
+      <div class="buttons is-right">
+        <button class="button is-medium" routerLink="/">Cancel</button>
+        <button class="button is-primary has-text-white is-medium" 
+          (click)="updateTeamInformation(teamInput.value,minuteplayesInput.value, goalsInput.value, assistsInput.value, yellowcardsInput.value, redcardInput.value,passInput.value, aerialsWonInput.value,manofthematchInput.value,ratingInput.value,shotspergameInput.value)" >Update</button>
+      </div>
+
+    </div>    
+</div>
+</div>
+
+
+<!--(click)="createTeaminformation(teamInput.value,minuteplayesInput.value,goalsInput.value,assistsInput.value,
+        yellowcardsInput.value,redcardInput.value,passInput.value,aerialsWonInput.value,manofthematchInput.value,
+        ratingInput.value,shotspergameInput.value)" >Create</button>-->
+  
